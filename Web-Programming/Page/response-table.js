@@ -2,7 +2,7 @@ function addData(){
     let table = document.getElementById("response-data");
     const data = decodeURIComponent(document.cookie).split("; ");
     let output = "";
-    if(data[data.length - 1] !== '' ){
+    if(data[0] !== '' ){
         data.forEach(element => {
             if(element.indexOf("number") !== 0){
                 t = element.substring(3).split(",");
