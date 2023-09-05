@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #1d2033;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientFX.TableController">
+   <effect>
+      <InnerShadow height="255.0" radius="107.8275" width="178.31">
+         <color>
+            <Color red="0.43529412150382996" green="0.2980392277240753" blue="0.43921568989753723" />
+         </color>
+      </InnerShadow>
+   </effect>
+   <children>
+      <TableView fx:id="table" layoutX="164.0" layoutY="1.0" prefHeight="615.0" prefWidth="736.0" style="-fx-background-color: #2a3f57;" stylesheets="@yes.css">
+        <columns>
+          <TableColumn fx:id="id" minWidth="0.0" prefWidth="71.77780151367188" style="-fx-background-color: #2a3f57;">
+               <graphic>
+                  <Label text="Id" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+          <TableColumn fx:id="name" minWidth="0.0" prefWidth="46.888916015625" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="Name" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="corX" prefWidth="65.60004425048828" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="CorX" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="corY" prefWidth="65.60004425048828" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="CorY" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="creationDate" prefWidth="95.2000732421875" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="CreationDate" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="price" prefWidth="65.60003662109375" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="Price" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="refundable" prefWidth="85.60000610351562" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="Refundable" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="type" prefWidth="78.39996337890625" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="Type" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="eventId" prefWidth="72.79998779296875" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="EventId" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="eventName" prefWidth="72.79998779296875" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="EventName" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+            <TableColumn fx:id="owner" prefWidth="95.9998779296875" style="-fx-background-color: #1d2033;">
+               <graphic>
+                  <Label text="Owner" textFill="#ad26a0">
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </Label>
+               </graphic></TableColumn>
+        </columns>
+         <effect>
+            <DropShadow height="45.94" offsetX="-3.0" radius="18.9975" width="32.05">
+               <color>
+                  <Color red="0.4254133403301239" green="0.2924000024795532" blue="0.4300000071525574" />
+               </color>
+               <input>
+                  <InnerShadow choke="0.41" height="247.909375" radius="125.22734375" width="255.0">
+                     <color>
+                        <Color opacity="0.22588832676410675" />
+                     </color>
+                  </InnerShadow>
+               </input>
+            </DropShadow>
+         </effect>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="delete" layoutX="736.0" layoutY="616.0" mnemonicParsing="false" onAction="#removeFromTable" prefHeight="81.0" prefWidth="164.0" stylesheets="@yes.css" text="Удалить" textFill="#852e7c">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="update" layoutX="568.0" layoutY="616.0" mnemonicParsing="false" onAction="#goToUpdate" prefHeight="81.0" prefWidth="168.0" stylesheets="@yes.css" text="Изменить" textFill="#852e7c">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="add" layoutX="400.0" layoutY="616.0" mnemonicParsing="false" onAction="#goToInsert" prefHeight="81.0" prefWidth="168.0" stylesheets="@yes.css" text="Добавить" textFill="#852e7c">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="map" layoutX="165.0" layoutY="616.0" mnemonicParsing="false" onAction="#goToVisuals" prefHeight="81.0" prefWidth="235.0" stylesheets="@yes.css" text="Карта билетов" textFill="#852e7c">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ChoiceBox fx:id="languageBox" layoutX="13.0" layoutY="56.0" prefHeight="81.0" prefWidth="134.0" stylesheets="@yes.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ChoiceBox>
+      <Label fx:id="languageLabel" layoutX="13.0" layoutY="14.0" prefHeight="27.0" prefWidth="142.0" text="Сменить язык" textAlignment="CENTER" textFill="#ad26a0" AnchorPane.rightAnchor="740.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <Bloom threshold="0.24" />
+         </effect>
+      </Label>
+      <Label fx:id="userLabel" layoutX="25.0" layoutY="336.0" prefHeight="27.0" prefWidth="109.0" text="Текущий пользователь: " textAlignment="CENTER" textFill="#ad26a0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <Bloom threshold="0.24" />
+         </effect>
+      </Label>
+      <Button fx:id="changeUser" layoutY="616.0" mnemonicParsing="false" onAction="#changeUser" prefHeight="81.0" prefWidth="165.0" stylesheets="@yes.css" text="Выйти" textFill="#852e7c">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+.button{
+    -fx-background-color: #2a3f57;
+}
+.button:hover{
+    -fx-background-color: #8ca3bd;
+}
+
+.choice-box{
+    -fx-background-color: #2a3f57;
+}
+
+.choice-box:hover{
+    -fx-background-color: #8ca3bd;
+}
+
+.table-column{
+    -fx-text-fill: #ad26a0;
+}
+
+.table-row-cell:selected {
+    -fx-text-fill: #fff;
+
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #2a3f57;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientFX.VisualsController">
+   <effect>
+      <InnerShadow height="47.239999999999995" radius="21.822499999999998" width="42.05">
+         <color>
+            <Color red="0.43529412150382996" green="0.2980392277240753" blue="0.43921568989753723" />
+         </color>
+      </InnerShadow>
+   </effect>
+   <children>
+      <Pane fx:id="pane" layoutX="1.0" layoutY="2.0" prefHeight="631.0" prefWidth="900.0" style="-fx-background-color: #1d2033;">
+         <effect>
+            <InnerShadow height="71.61" radius="36.765" width="77.45">
+               <color>
+                  <Color red="0.6784313917160034" green="0.14901961386203766" blue="0.6274510025978088" />
+               </color>
+            </InnerShadow>
+         </effect></Pane>
+      <Button fx:id="goToTable" layoutX="1.0" layoutY="633.0" mnemonicParsing="false" onAction="#goToTable" prefHeight="66.0" prefWidth="900.0" stylesheets="@yes.css" text="Вернуться в таблицу" textFill="#ad26a0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
