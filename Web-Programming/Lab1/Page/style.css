@@ -1,0 +1,75 @@
+body{
+    background-color: #140A30;
+    font-family: cursive;
+}
+.head-text{
+    color: #DF0D21;
+    font-size: 20px;
+}
+#lab-text{
+    text-align: center;
+    font-size: 30px;
+}
+h3{
+    margin: 0px;
+}
+#graph{
+    background-color: #9e1926;
+    border:solid 15px snow;
+    border-radius: 20px;
+}
+#select-table{
+    border: solid 15px snow;
+    color: #DF0D21;
+    font-size: 30px;
+    border-radius: 20px;
+}
+#x-labels{
+    font-size: 20px;
+    color: slategrey;
+}
+.show-data-table{
+    background-color: snow;
+}
+
+.show-data-table td{
+    border: solid 10px black;
+    margin: 0;
+    font-size: 40px;
+    padding: 5px;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.5);
+}
+
+input[type="checkbox"]:hover{
+    cursor: pointer;
+}
+
+input[type="text"]{
+    transform: scale(1.5) translate(25px, -5px);
+}
+button[type="button"]{
+    transform: scale(2.8);
+    font-family: cursive;
+}
+button[type="button"]:hover{
+    color: #DF0D21;
+    border: solid 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#R{
+    width: 110px;
+    height: 50px;
+    font-family: cursive;
+    text-align: center;
+    font-size: 25px;
+}
+#R:hover{
+    color: #DF0D21;
+    border: solid 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
