@@ -1,0 +1,67 @@
+body{
+    background-color: #140A30;
+}
+#mainTable{
+    width: 100%;
+}
+#header{
+    border-bottom: solid 2px snow;
+    color: snow;
+    font-size: 12px;
+}
+#labName{
+    text-align: center;
+}
+#svg {
+    background-color: gold;
+    border: solid 10px snow;
+    border-radius: 5px;
+}
+
+#selectTableContainer{
+    width: 100%;
+    display: grid;
+}
+#selectTable{
+    border-spacing: 0;
+    border: solid 10px snow;
+    border-radius: 5px;
+    font-size: 10px;
+    color: snow;
+    height: 520px;
+}
+#row{
+    display: flex;
+}
+.XYRLabels{
+    font-size: 20px;
+}
+#selectXTable{
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+.showDataTable{
+    width: 100%;
+    border-spacing: 0;
+    height: 100%;
+    color: #DF0D21;
+}
+.showDataTable td{
+    border-radius: 5px;
+    background-color: gold;
+    padding: 5px;
+    border: solid 5px snow;
+    font-size: 30px;
+}
+
+
+button[type="submit"]{
+    transform: scale(2.8);
+    font-family: cursive;
+}
+button[type="submit"]:hover{
+    color: gold;
+    border: solid 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
