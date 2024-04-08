@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Лабораторная работа №3 | Основная страница</title>
+    <h:outputStylesheet name="css/main.css"/>
+    <h:outputStylesheet name="css/button.css"/>
+</h:head>
+<h:body>
+    <div id="header">
+        <h1>Лабораторная работа №3</h1>
+    </div>
+    <div class="row">
+        <div class="svg-container">
+            <ui:include src="templates/svg.html"/>
+        </div>
+        <div class="form-container">
+            <h:form id="main-form">
+                <div class="input-container">
+                    <div class="input-row">
+                        <p>
+                            <h:outputLabel id="x-label" for="x" value="Введите X:" />
+                        </p>
+                        <h:inputText value="#{pointsBean.x}"
+                                     id="x"
+                                     name="x-field"
+                                     maxlength="6"
+                                     style="width: 180px;font-size: 15px">
+                            <f:validateDoubleRange minimum="-3" maximum="5"/>
+                        </h:inputText>
+                    </div>
+                    <div class="input-row" >
+                        <p>
+                            <h:outputLabel for="display-y" value="Выберите Y:"/>
+                        </p>
+                        <h:panelGrid columns="1" style="margin: 0 auto">
+                            <h:outputText  id="display-y" value="#{pointsBean.y}"/>
+                            <p:slider id="y-slider" style="width:180px;display: inline-block" for="y" display="display-y" minValue="-4" maxValue="4"/>
+                        </h:panelGrid>
+                        <h:inputHidden id="y" value="#{pointsBean.y}" />
+                    </div>
+                    <div class="input-row">
+                        <p>
+                            <h:outputText  value="Выберите R: "/>
+                        </p>
+                        <div>
+                            <h:commandButton onclick="setR(this.value)" styleClass="r-button" value="1.0" type="button">
+                                <f:ajax listener="#{pointsBean.setR(1)}"/>
+                            </h:commandButton>
+                            <h:commandButton onclick="setR(this.value)" styleClass="r-button" value="2.0" type="button">
+                                <f:ajax listener="#{pointsBean.setR(2)}"/>
+                            </h:commandButton>
+                            <h:commandButton onclick="setR(this.value)" styleClass="r-button" value="3.0" type="button">
+                                <f:ajax listener="#{pointsBean.setR(3)}"/>
+                            </h:commandButton>
+                            <h:commandButton onclick="setR(this.value)" styleClass="r-button" value="4.0" type="button">
+                                <f:ajax listener="#{pointsBean.setR(4)}"/>
+                            </h:commandButton>
+                            <h:commandButton onclick="setR(this.value)" styleClass="r-button" value="5.0" type="button">
+                                <f:ajax listener="#{pointsBean.setR(5)}"/>
+                            </h:commandButton>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-button-container">
+                    <h:commandButton id="submit-button"
+                                     styleClass="submit-button"
+                                     value="Отправить"
+                                     action="#{dbManager.addPoint(pointsBean)}">
+                        <f:ajax execute="x y" render="output-table x-message show-points"/>
+                    </h:commandButton>
+                    <h:commandButton styleClass="submit-button" value="Вернуться" action="goToIndex"/>
+                </div>
+                <div class="error-message-container">
+                    <h:message styleClass="x-message" id="x-message" for="x"/>
+                </div>
+            </h:form>
+        </div>
+    </div>
+    <div id="table-container">
+        <p:dataTable id="output-table" value="#{dbManager.points}" var="point" styleClass="output-table">
+            <p:column headerText="ID">
+                <h:outputText value="#{point.id}"/>
+            </p:column>
+            <p:column headerText="X">
+                <h:outputText value="#{point.x}"/>
+            </p:column>
+            <p:column headerText="Y">
+                <h:outputText value="#{point.y}"/>
+            </p:column>
+            <p:column headerText="R">
+                <h:outputText value="#{point.r}"/>
+            </p:column>
+            <p:column headerText="Result">
+                <h:outputText value="#{point.result}"/>
+            </p:column>
+        </p:dataTable>
+    </div>
+</h:body>
+<h:outputScript library="js" name="graph.js"/>
+<h:outputScript>
+    setR("#{pointsBean.r}");
+</h:outputScript>
+<h:panelGroup id="show-points">
+    <h:outputScript>
+        setPoints('#{dbManager.allCoordinates}')
+    </h:outputScript>
+</h:panelGroup>
+<p:remoteCommand name="addPoint" update="show-points output-table" actionListener="#{dbManager.addPointFromJs()}" process="@this"/>
+</html>
