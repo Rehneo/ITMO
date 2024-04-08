@@ -1,0 +1,20 @@
+.svg-container{
+  margin: 0 auto;
+  border: snow 5px solid;
+  border-radius: 5px;
+  text-align: center;
+}
+
+svg{
+  background: #A0A0A0;
+  border: 5px solid black;
+  width: 400px;
+  height: 400px;
+}
+
+@media (max-width: 450px){
+  svg{
+    width: 250px;
+    height: 250px;
+  }
+}

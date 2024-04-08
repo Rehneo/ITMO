@@ -1,0 +1,41 @@
+#header{
+  height: 50px;
+  font-size: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+@media (max-width: 360px){
+  #header{
+    height: 50px;
+    font-size: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+}
+.row{
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 16px 16px 24px;
+  box-shadow: 0 2px 15px rgba(0,0,0,15);
+  border-radius: 4px;
+}
+
+@media (min-width: 1000px){
+  .desktop-row{
+    display: inline-flex;
+  }
+  .col{
+    text-align: center;
+  }
+  #form-row{
+    margin: 10px;
+    width: 400px;
+  }
+  #table-row{
+    max-width: 870px
+  }
+}
+
+
+

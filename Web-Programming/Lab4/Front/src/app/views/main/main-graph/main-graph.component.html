@@ -1,0 +1,33 @@
+<div class="svg-container">
+  <svg id="svg" xmlns="http://www.w3.org/2000/svg" (click)="setPoint($event)">
+    <polygon [attr.points]="rectangle" fill="#606060"></polygon>
+    <rect [attr.x]="side/2" [attr.y]="side/2" [attr.width]="side*0.2" [attr.height]="side*0.4" fill="#606060"></rect>
+    <path fill="#606060" [attr.d]="circle"></path>
+    <line x1="0" [attr.x2]="side" [attr.y1]="side/2" [attr.y2]="side/2"  stroke="black" stroke-width="3px"></line>
+    <line y1="0" [attr.y2]="side" [attr.x1]="side/2" [attr.x2]="side/2"  stroke="black" stroke-width="3px"></line>
+    <line [attr.x1]="side*0.1" [attr.x2]="side*0.1"  [attr.y1]="side/2-5"  [attr.y2]="side/2+5"  stroke="black" stroke-width="3px"></line>
+    <line [attr.x1]="side*0.3" [attr.x2]="side*0.3" [attr.y1]="side/2-5"  [attr.y2]="side/2+5"   stroke="black" stroke-width="3px"></line>
+    <line [attr.x1]="side*0.7" [attr.x2]="side*0.7" [attr.y1]="side/2-5"  [attr.y2]="side/2+5"   stroke="black" stroke-width="3px"></line>
+    <line [attr.x1]="side*0.9" [attr.x2]="side*0.9" [attr.y1]="side/2-5"  [attr.y2]="side/2+5"   stroke="black" stroke-width="3px"></line>
+    <line [attr.x1]="side/2-5"  [attr.x2]="side/2+5" [attr.y1]="side*0.1" [attr.y2]="side*0.1" stroke="black" stroke-width="3px"></line>
+    <line [attr.x1]="side/2-5"  [attr.x2]="side/2+5" [attr.y1]="side*0.3" [attr.y2]="side*0.3" stroke="black" stroke-width="3px"></line>
+    <line [attr.x1]="side/2-5"  [attr.x2]="side/2+5" [attr.y1]="side*0.7" [attr.y2]="side*0.7" stroke="black" stroke-width="3px"></line>
+    <line [attr.x1]="side/2-5"  [attr.x2]="side/2+5" [attr.y1]="side*0.9" [attr.y2]="side*0.9" stroke="black" stroke-width="3px"></line>
+    <text  fill="white" [attr.x]="side*0.7-10" [attr.y]="side/2-10" >{{this.r!=-1?r/2:"R/2"}}</text>
+    <text  fill="white" [attr.x]="side*0.3-10" [attr.y]="side/2-10">{{this.r!=-1?-r/2:"-R/2"}}</text>
+    <text  fill="white" [attr.x]="side*0.1-10" [attr.y]="side/2-10">{{this.r!=-1?-r:"-R"}}</text>
+    <text  fill="white" [attr.x]="side*0.9-5" [attr.y]="side/2-10">{{this.r!=-1?r:"R"}}</text>
+    <text  fill="white" [attr.x]="side/2+10" [attr.y]="side*0.1+5" >{{this.r!=-1?r:"R"}}</text>
+    <text  fill="white" [attr.x]="side/2+10" [attr.y]="side*0.3+5">{{this.r!=-1?r/2:"R/2"}}</text>
+    <text  fill="white" [attr.x]="side/2+10" [attr.y]="side*0.7+5">{{this.r!=-1?-r/2:"-R/2"}}</text>
+    <text  fill="white" [attr.x]="side/2+10" [attr.y]="side*0.9+5">{{this.r!=-1?-r:"-R"}}</text>
+    <g *ngFor="let point of points">
+      <circle
+        [attr.cx]="(side/2 + side*0.4 * (point.x / this.r))"
+        [attr.cy]="(side/2 - side*0.4 * (point.y / this.r))"
+        [attr.fill]="(point.result ? 'green' : 'red')"
+        r="4"
+      ></circle>
+    </g>
+  </svg>
+</div>

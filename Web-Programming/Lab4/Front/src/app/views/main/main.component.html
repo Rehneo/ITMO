@@ -1,0 +1,22 @@
+<div id="header">
+  <h1>Лабораторная работа №4</h1>
+</div>
+<div>
+  <div class="col">
+    <div class="desktop-row">
+      <div class="row" id="graph-row">
+        <app-main-graph #graph (newPointEvent)="table.addPoint($event)"></app-main-graph>
+      </div>
+      <div class="row" id="form-row">
+        <app-main-form (deletePointsEvent)="graph.deletePoints(); table.deleteRows()"
+                       (newPointEvent)="table.addPoint($event); graph.addPoint($event)"
+                       (rChangeEvent)="graph.rChange($event)">
+
+        </app-main-form>
+      </div>
+    </div>
+    <div class="row" id="table-row">
+      <app-main-table id="table" #table></app-main-table>
+    </div>
+  </div>
+</div>

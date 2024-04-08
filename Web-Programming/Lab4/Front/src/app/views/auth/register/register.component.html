@@ -1,0 +1,83 @@
+
+<form [formGroup]="registerForm" (submit)="register()">
+  <h1>Создать аккаунт</h1>
+
+  <div class="form-field">
+    <label for="username">Имя пользователя</label>
+    <input
+      id="username"
+      formControlName="username"
+      type="text"
+      name="username"
+      minlength="4">
+
+    <div
+      [style.display]="display_username_null"
+      class="error-message">
+      Имя пользователя не должно быть пустым
+    </div>
+    <div
+      [style.display]="display_username_invalid"
+      class="error-message">
+      Имя пользователя должно состоять минимум из 4 символов
+      и содержать только буквы латинского алфавита и цифры
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="password">Пароль</label>
+    <input
+      id="password"
+      formControlName="password"
+      type="password"
+      name="password">
+
+    <div
+      [style.display]="display_password_null"
+      class="error-message">
+      Пароль не должен быть пустым
+    </div>
+    <div
+      [style.display]="display_password_invalid"
+      class="error-message">
+      Пароль должен состоять минимум из 6 символов
+      и содержать хотя бы одну букву латинского алфавита и цифру
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="re-enter-password">Повторите пароль</label>
+    <input
+      id="re-enter-password"
+      formControlName="confirmPassword"
+      type="password"
+      name="re-enter-password">
+
+    <div
+      [style.display]="display_confirm_password_null"
+      class="error-message">
+      Данное поле не должно быть пустым
+    </div>
+    <div
+      [style.display]="display_confirm_password_invalid"
+      class="error-message">
+      Пароли не совпадают
+    </div>
+    <div
+      [style.display]="display_server_message"
+      class="error-message">
+      {{this.server_message}}
+    </div>
+
+  </div>
+
+  <div class="form-field">
+    <button type="submit">
+      Создать
+    </button>
+  </div>
+
+  <div class="register-link">
+    У вас уже есть аккаунт? <a href="/login">Войти</a>
+  </div>
+</form>

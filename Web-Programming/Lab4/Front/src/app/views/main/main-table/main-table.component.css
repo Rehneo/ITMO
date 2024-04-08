@@ -1,0 +1,24 @@
+.table{
+  width: 100%;
+  border-spacing: 0;
+  height: 100%;
+  color: #000;
+}
+.table td{
+  border-radius: 4px;
+  background-color: #ccc;
+  padding: 5px;
+  border: solid 2px #000;
+  font-size: 18px;
+  text-align: center;
+}
+.table th{
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border: solid 2px #ccc;
+  font-size: 22px;
+  text-align: center;
+}
+

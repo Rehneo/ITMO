@@ -1,0 +1,16 @@
+<div id="table-container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th *ngFor="let column of headers">
+        {{column}}
+      </th>
+    </tr>
+    </thead>
+    <tr *ngFor="let row of rows.reverse()">
+      <td *ngFor="let column of headers">
+        {{row[column]}}
+      </td>
+    </tr>
+  </table>
+</div>

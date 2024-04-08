@@ -1,0 +1,60 @@
+<div class="form-container">
+  <form [formGroup]="pointForm" (submit)="submit()">
+    <div class="form-field">
+      <label for="x_value">Выберите X: </label>
+      <select id="x_value" formControlName="x" required>
+        <option *ngFor="let x of x_values" [ngValue]="x">
+          {{ x }}
+        </option>
+      </select>
+      <div class="error-message" id="x-message" [style.display]="display_x">
+        Пожалуйста, выберите значение X.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="y_value">Введите Y: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="y_value"
+        formControlName="y"
+        maxlength="6"
+        required
+      />
+      <div class="error-message" id="y-message1" [style.display]="display_y_null">
+        Пожалуйста, введите значение Y.
+      </div>
+      <div class="error-message" id="y-message2" [style.display]="display_y_invalid">
+        Значение Y должно быть числом в интервале (-5, 5).
+      </div>
+    </div>
+    <div class="form-field">
+      <label for="r_value">Выберите R: </label>
+      <select id="r_value" formControlName="r" required
+      (change)="rChange()">
+        <option *ngFor="let r of r_values" [ngValue]="r">
+          {{ r }}
+        </option>
+      </select>
+      <div class="error-message" id="r-message" [style.display]="display_r">
+        Пожалуйста, выберите значение R.
+      </div>
+    </div>
+    <div class="form-field">
+      <button type="submit">
+        Отправить
+      </button>
+    </div>
+    <div class="form-field">
+      <button type="button" (click)="deletePoints()">
+        Очистить
+      </button>
+    </div>
+    <div class="form-field">
+      <button type="button" (click)="logout()">
+        Выйти
+      </button>
+    </div>
+  </form>
+</div>
